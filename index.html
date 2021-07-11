@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="icon" type="image/png" href="icon.png" sizes="500x500"/>
+    <title>MGMV Java whitelist form</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align:center">
+          <h2>MGMV WHITELIST FORM</h2>
+          <div class="column">
+            <img src="MGMV1.png" style="width:100%">
+          </div>
+          <p>complete this form to get whitelisted admins will inform your result</p>
+        </div>
+        <div class="row">
+          
+          <div class="column">
+            <form id="submit-form" action="">
+              <label for="name">Your real name?</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name.." required>
+              <label for="java">
+                  Did you have minecraft java(minecraft pc)</label>
+              <select id="java" name="java">
+                  <option value="Yes, I have">
+                      Yes,I have</option>
+                  <option value="No,I haven't">
+                      No,I haven't
+                  </option>
+              </select>
+              <label for="tag">Gamer Tag:</label>
+              <input type="text" name="Gamer_Tag" id="tag" placeholder="Enter your MC Gamer Tag" required />
+              <label for="Discord">Discord ID</label>
+              <input type="text" name="Discord" id="Discord" placeholder="Example#0000" />
+              <label for="RTP">
+                  Did you know to use land Claiming and RTP plugins?</label>
+              <select id="RTP" name="Claim_RTP">
+                  <option value="Yes, I know">
+                      Yes,I know
+                  </option>
+                  <option value="No,I don't know">
+                      No,I don't know
+                  </option>
+              </select>
+              <label for="EXP">Your minecraft experience</label>
+              <input type="text" name="EXP" id="EXP" placeholder="Write your minecraft experience" required />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <div class="container">
+        <div style="text-align:center">
+          <h3 style="color:#0A00FF">Please leave a comment about this website</h3>
+          </div>
+              <textarea id="review" name="review" placeholder="Write the experience about this website (optional)" style="height:100px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="column">
+              <a href="https://youtu.be/8txJQfp9DX8" target="_blank">
+            <img src="Trailer.png" style="width:100%">
+              </a>
+          </div
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbyg65X9HBfJYdn41ZbZmQcK8CtYdwWamWPWZ6upQMJk2MU_3GZ8uDGvQ8hUYrcheX_u1w/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+        </script>
+</body>
+</html>
